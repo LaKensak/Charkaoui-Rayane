@@ -13,6 +13,25 @@ const SkillsHuman = ({ animationName = 'idle', currentSkill = null, ...props }) 
     // Charger dynamiquement le modèle 3D selon le skill survolé
     const { nodes, materials, scene } = useGLTF(modelPath);
 
+    // Définir des échelles spécifiques par modèle
+    const getModelScale = () => {
+        if (currentSkill?.name?.toLowerCase() === 'javascript') {
+            return 2.501; // Échelle ajustée pour JavaScript
+        }
+        return 2.501; // Échelle par défaut pour Python et autres
+    };
+
+    // Obtenir les réglages de position pour que la rotation soit centrée correctement
+    const getModelPosition = () => {
+        if (currentSkill?.name?.toLowerCase() === 'javascript') {
+            return [0, 0, 0]; // Centrer le modèle JavaScript à l'origine
+        }
+        return [-0.002, 0, 0]; // Position par défaut pour les autres modèles
+    };
+
+    const modelScale = getModelScale();
+    const modelPosition = getModelPosition();
+
     // Charger les animations
     const { animations: idleAnimation } = useFBX('/models/animations/idle.fbx');
     const { animations: saluteAnimation } = useFBX('/models/animations/salute.fbx');
@@ -52,7 +71,21 @@ const SkillsHuman = ({ animationName = 'idle', currentSkill = null, ...props }) 
         return null;
     }
 
-    // Rendu adaptatif en fonction de la structure du modèle
+    // Si c'est le modèle JavaScript, utiliser une approche spécifique pour la rotation
+    if (currentSkill?.name?.toLowerCase() === 'javascript') {
+        return (
+            <group {...props} dispose={null} ref={group}>
+                <primitive
+                    object={scene}
+                    scale={modelScale}
+                    position={modelPosition}
+                    rotation={[0, 0, 0]}
+                />
+            </group>
+        );
+    }
+
+    // Rendu adaptatif pour les autres modèles
     return (
         <group {...props} dispose={null} ref={group}>
             {/* Rendu du modèle actuel */}
@@ -60,24 +93,28 @@ const SkillsHuman = ({ animationName = 'idle', currentSkill = null, ...props }) 
                 <mesh
                     geometry={nodes.Object_4.geometry}
                     material={materials.material}
-                    position={[-0.002, 0, 0]}
+                    position={modelPosition}
                     rotation={[Math.PI / 2, 0, 0]}
-                    scale={2.501}
+                    scale={modelScale}
                 />
             )}
             {nodes.Object_6 && materials['.001'] && (
                 <mesh
                     geometry={nodes.Object_6.geometry}
                     material={materials['.001']}
-                    position={[-0.002, 0, 0]}
+                    position={modelPosition}
                     rotation={[-Math.PI / 2, 0, -Math.PI]}
-                    scale={2.501}
+                    scale={modelScale}
                 />
             )}
 
             {/* Si la structure du modèle est différente, on peut utiliser le fallback ci-dessous */}
             {(!nodes.Object_4 || !nodes.Object_6) && (
-                <primitive object={scene} scale={2.501} position={[0, 0, 0]} />
+                <primitive
+                    object={scene}
+                    scale={modelScale}
+                    position={modelPosition}
+                />
             )}
         </group>
     );
