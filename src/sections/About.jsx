@@ -42,9 +42,9 @@ const About = () => {
                         <img src="/assets/grid2.png" alt="grid-2" className="w-full sm:w-[276] h-fit object-contain"/>
                         <div>
                             <p className="grid-headtext">Tech Stack</p>
-                            <p className="grid-subtext">Je développe principalement avec React, Vue.js, et Angular pour
-                                le frontend. Pour le backend, j'utilise PHP/Laravel, Node.js et Python/Django. Je
-                                maîtrise également SQL et NoSQL pour les bases de données.</p>
+                            <p className="grid-subtext">Je développe principalement avec React pour
+                                le frontend. Pour le backend, j'utilise PHP/Node.js et Django. Je
+                                maîtrise également SQL pour les bases de données.</p>
                         </div>
                     </div>
                 </div>
