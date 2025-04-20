@@ -107,7 +107,7 @@ const Contact = () => {
                                 />
 
                                 <button className="field-btn" type="submit" disabled={loading}>
-                                    {loading ? 'Envoi ...' : 'Enoyer un Message'}
+                                    {loading ? 'Envoi ...' : 'Envoyer un Message'}
                                     <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow"/>
                                 </button>
                             </label>
