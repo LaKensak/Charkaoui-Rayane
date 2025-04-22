@@ -43,7 +43,7 @@ const DemoComputer = (props) => {
                     scale={[0.661, 0.608, 0.401]}>
                     <meshBasicMaterial map={txt} toneMapped={false} />
                 </mesh>
-                <group name="RootNode" position={[0, 1.093, 0]} rotation={[-Math.PI / 2, 0, -0.033]} scale={0.045}>
+                <group name="RootNode" position={[0, 1.093, 0]} rotation={[-Math.PI / 2, 0, -0.033]} scale={0.15}>
                     <group
                         name="Screen001"
                         position={[5.658, 1.643, 0.812]}
