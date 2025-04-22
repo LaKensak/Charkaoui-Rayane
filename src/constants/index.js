@@ -34,6 +34,7 @@ export const myProjects = [
         desc: 'Coach Relation est un espace numérique dédié au développement personnel et conjugal. Notre plateforme offre des outils pratiques et des conseils personnalisés pour aider les couples à construire une relation plus forte et équilibrée.',
         subdesc: 'La plateforme combine coaching professionnel et technologie moderne avec une interface intuitive permettant aux couples de suivre leur progression, accéder à des ressources ciblées et participer à des exercices interactifs pour renforcer leur lien.',
         href: 'https://github.com/LaKensak/DjangoNextApp',
+        hrefSite: 'https://djangoproject1-frontend.onrender.com/',
         texture: '/textures/project/project1.mp4',
         logo: '/assets/proj.png',
         logoStyle: {
@@ -71,6 +72,7 @@ export const myProjects = [
         subdesc:
             'Découvrez des informations détaillées sur des pilotes comme Ayrton Senna, Lewis Hamilton et Michael Schumacher, explorez les circuits mythiques tels que Spa-Francorchamps et Monaco, et revivez les rivalités marquantes de la F1. Une véritable immersion dans l’univers captivant du sport automobile.',
         href: 'https://github.com/LaKensak/F1-New',
+        hrefSite: 'https://rcharkaoui.alwaysdata.net/',
         texture: '/textures/project/project2.mp4',
         logo: '/assets/project-logo2.png',
         logoStyle: {
