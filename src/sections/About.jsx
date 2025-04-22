@@ -110,7 +110,7 @@ const About = () => {
                             <div className="copy-container" onClick={GestionCopie}>
                                 <img src={estCopier ? '/assets/tick.svg' : '/assets/copy.svg'} alt="copie"/>
                                 <p className="lg:text-xl md:text-xl font-small text-gray_gradient text-white">
-                                    rayane.charkaoui@saint-remi.net
+                                    rayane.charkaoui2@gmail.com
                                 </p>
                             </div>
                             <div className="mt-4">
