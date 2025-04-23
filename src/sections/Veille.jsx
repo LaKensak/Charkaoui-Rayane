@@ -468,12 +468,7 @@ const Veille = () => {
                             <div>
                                 <div className="flex justify-between items-center">
                                     <p className="grid-headtext">Ressources</p>
-                                    <button
-                                        className="text-xs text-purple-400 hover:text-purple-300 transition-colors"
-                                        title="Trier par pertinence"
-                                    >
-                                        Trier par pertinence
-                                    </button>
+                                
                                 </div>
                                 <div className="space-y-3 mt-4">
                                     <div className="flex items-center grid-subtext p-2 hover:bg-black hover:bg-opacity-30 rounded-lg transition-colors">
