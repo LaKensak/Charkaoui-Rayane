@@ -383,28 +383,28 @@ const Veille = () => {
                                 </div>
                             </div>
 
-                            {/* Barre de recherche */}
-                            <div className="search-bar mb-4">
-                                <input
-                                    type="text"
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    placeholder="Rechercher un sujet..."
-                                    className="w-full p-2 pl-10 pr-10 bg-black bg-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-                                />
-                                <span className="search-icon">
-                                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                </span>
-                                {searchTerm && (
-                                    <span className="clear-icon" onClick={() => setSearchTerm('')}>
-                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                        </svg>
-                                    </span>
-                                )}
-                            </div>
+                            {/*/!* Barre de recherche *!/*/}
+                            {/*<div className="search-bar mb-4">*/}
+                            {/*    <input*/}
+                            {/*        type="text"*/}
+                            {/*        value={searchTerm}*/}
+                            {/*        onChange={(e) => setSearchTerm(e.target.value)}*/}
+                            {/*        placeholder="Rechercher un sujet..."*/}
+                            {/*        className="w-full p-2 pl-10 pr-10 bg-black bg-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"*/}
+                            {/*    />*/}
+                            {/*    <span className="search-icon">*/}
+                            {/*        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                            {/*            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>*/}
+                            {/*        </svg>*/}
+                            {/*    </span>*/}
+                            {/*    {searchTerm && (*/}
+                            {/*        <span className="clear-icon" onClick={() => setSearchTerm('')}>*/}
+                            {/*            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                            {/*                <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>*/}
+                            {/*            </svg>*/}
+                            {/*        </span>*/}
+                            {/*    )}*/}
+                            {/*</div>*/}
 
                             <div className="space-y-4 max-h-[500px] overflow-y-auto pr-2">
                                 {filteredTopics.length > 0 ? (
