@@ -35,7 +35,7 @@ export const navLinks = [
 export const veilleTopics = [
     {
         name: "Technologies LiDAR",
-        source: "IEEE Spectrum",
+        source: "IEEE",
         date: " - Avril 2025",
         description: "Les capteurs LiDAR (Light Detection and Ranging) révolutionnent la perception des véhicules autonomes en offrant une vision 3D précise de l'environnement. Les dernières avancées permettent une détection plus lointaine et une meilleure résolution dans diverses conditions météorologiques, tout en réduisant considérablement les coûts de production.",
         shortDesc: "Évolutions récentes des capteurs de perception 3D",
@@ -51,7 +51,7 @@ export const veilleTopics = [
     },
     {
         name: "Intelligence Artificielle Embarquée",
-        source: "MIT Technology Review",
+        source: "NVIDIA",
         date: " - Mars 2025",
         description: "L'IA embarquée dans les véhicules autonomes connaît une transformation majeure avec l'arrivée de nouveaux algorithmes de prise de décision en temps réel. Ces systèmes permettent désormais de naviguer dans des environnements urbains complexes et d'anticiper le comportement des autres usagers de la route avec une précision inédite.",
         shortDesc: "Algorithmes avancés pour la prise de décision en milieu urbain",
@@ -67,7 +67,7 @@ export const veilleTopics = [
     },
     {
         name: "Réglementation Européenne",
-        source: "Commission Européenne",
+        source: "UNECE",
         date: " - Février 2025",
         description: "Le cadre réglementaire européen pour les véhicules autonomes évolue rapidement. Les nouvelles directives adoptées en 2025 définissent des protocoles standardisés pour l'homologation des véhicules de niveau 4, ouvrant la voie à un déploiement commercial sur certains axes routiers européens dès 2026.",
         shortDesc: "Cadre légal pour l'homologation des véhicules niveau 4",
@@ -83,7 +83,7 @@ export const veilleTopics = [
     },
     {
         name: "Sécurité Informatique",
-        source: "Black Hat Conference",
+        source: "IEEE",
         date: " - Janvier 2025",
         description: "La sécurité informatique demeure un défi majeur pour l'industrie des véhicules autonomes. De récentes découvertes ont mis en lumière des vulnérabilités dans les systèmes de communication V2X (Vehicle-to-Everything), motivant le développement de nouvelles approches de cryptographie quantique et de détection d'intrusion en temps réel.",
         shortDesc: "Vulnérabilités découvertes dans les systèmes V2X",
