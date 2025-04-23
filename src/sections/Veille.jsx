@@ -239,7 +239,7 @@ const Veille = () => {
                                         <a href="/assets/EI_2019_art00001.pdf" target="_blank"
                                            rel="noopener noreferrer"
                                            className="hover:text-purple-400 transition-colors">
-                                            IEEE – LiDAR Technologies
+                                            IEEE Paper – LiDAR Technologies
                                         </a>
                                     </div>
                                     <div className="flex items-center grid-subtext">
@@ -247,7 +247,7 @@ const Veille = () => {
                                         <a href="https://blogs.nvidia.com/blog/auto-ecosystem-physical-ai/"
                                            target="_blank" rel="noopener noreferrer"
                                            className="hover:text-purple-400 transition-colors">
-                                            MIT Tech Review – AI & Autonomous Vehicles
+                                            NVIDIA Blog – Auto Ecosystem & Physical AI
                                         </a>
                                     </div>
                                     <div className="flex items-center space-x-4">
@@ -256,7 +256,7 @@ const Veille = () => {
                                             <a href="https://unece.org/transport/road-transport/automated-driving-0"
                                                target="_blank" rel="noopener noreferrer"
                                                className="hover:text-purple-400 transition-colors">
-                                                Commission Européenne
+                                                UNECE – Automated Driving
                                             </a>
                                         </div>
                                         <div className="flex items-center grid-subtext">
@@ -264,7 +264,7 @@ const Veille = () => {
                                             <a href="https://www.enisa.europa.eu/publications/smart-cars"
                                                target="_blank" rel="noopener noreferrer"
                                                className="hover:text-purple-400 transition-colors">
-                                                ENISA
+                                                ENISA – Smart Cars Publication
                                             </a>
                                         </div>
                                     </div>
@@ -273,7 +273,7 @@ const Veille = () => {
                                         <a href="/assets/_Camera_ready_final____IEEE_OJ_CommSoc__V2X_security_survey.pdf"
                                            target="_blank" rel="noopener noreferrer"
                                            className="hover:text-purple-400 transition-colors">
-                                            Black Hat – V2X & Sécurité Auto
+                                            IEEE OJ-CommSoc – V2X Security Survey
                                         </a>
                                     </div>
                                     <div className="flex items-center grid-subtext">
@@ -289,7 +289,7 @@ const Veille = () => {
                                         <a href="http://dl.acm.org/doi/fullHtml/10.1145/3590777.3591406"
                                            target="_blank" rel="noopener noreferrer"
                                            className="hover:text-purple-400 transition-colors">
-                                            ACM – Article sur V2X
+                                            ACM Digital Library – V2X Research Article
                                         </a>
                                     </div>
                                 </div>
