@@ -46,11 +46,11 @@ const Developper = ({ animationName = 'idle', ...props}) => {
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
 
             {/* Desert Skybox - sphere with the desert texture */}
-            <mesh ref={skyboxRef} scale={57.5}>
+            <mesh ref={skyboxRef} scale={57.5} position={[-24, 10, 0]}>
                 <sphereGeometry args={[1, 64, 64]} />
                 <meshStandardMaterial
                     map={skyboxMaterials['Desert_skybox_material'].map}
-                    side={2} // THREE.DoubleSide
+                    side={2}
                     metalness={0}
                     roughness={1}
                 />
