@@ -252,7 +252,7 @@ const Veille = () => {
                                     </div>
                                     <div className="flex items-center space-x-4">
                                         <div className="flex items-center grid-subtext">
-                                            <span className="mr-2">🇪🇺</span>
+                                            <span className="mr-2">📋</span>
                                             <a href="https://unece.org/transport/road-transport/automated-driving-0"
                                                target="_blank" rel="noopener noreferrer"
                                                className="hover:text-purple-400 transition-colors">
