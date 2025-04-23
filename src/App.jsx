@@ -6,6 +6,7 @@ import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
 import Experience from "./sections/Experience.jsx";
 import Skills from "./sections/Skills.jsx";
+import Veille from "./sections/Veille.jsx";
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <Project/>
             <Experience/>
             <Skills/>
+            <Veille/>
             <Contact/>
             <Footer/>
         </main>
