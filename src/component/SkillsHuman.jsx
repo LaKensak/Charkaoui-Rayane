@@ -3,59 +3,27 @@ import { useEffect, useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Configuration des couleurs par compétence - Palette améliorée
+// Configuration des couleurs par compétence
 const SKILL_COLORS = {
-  python: "#4584b6",
-  javascript: "#f7df1e",
-  sql: "#00758f",
-  react: "#61dafb",
-  nodejs: "#6cc24a",
-  typescript: "#3178c6",
-  default: "#6e9eff"
+  python: "#4B8BBE",
+  javascript: "#F0DB4F",
+  sql: "#0078D4",
+  react: "#61DAFB",
+  nodejs: "#68A063",
+  default: "#6495ED"  // Bleu plus vif par défaut
 };
 
-// Configuration du thème de fond pour le portfolio
-const BACKGROUND_THEMES = {
-  gradient: {
-    colors: ["#0e1a30", "#1b2a4e", "#32456c"],
-    fogColor: "#1a2747",
-    fogNear: 20,
-    fogFar: 60
-  },
-  aurora: {
-    colors: ["#142850", "#27496d", "#0c7b93"],
-    fogColor: "#142850",
-    fogNear: 25,
-    fogFar: 65
-  },
-  cosmic: {
-    colors: ["#0f2027", "#203a43", "#2c5364"],
-    fogColor: "#0f2027",
-    fogNear: 22,
-    fogFar: 60
-  }
-};
-
-const SkillsHuman = ({ 
-  animationName = 'idle', 
-  currentSkill = null, 
-  backgroundTheme = 'gradient',
-  ...props 
-}) => {
+const SkillsHuman = ({ animationName = 'idle', currentSkill = null, ...props }) => {
     const group = useRef();
     const backgroundRef = useRef();
     const starfieldRef = useRef();
     const galaxyRef = useRef();
-    const auroraRef = useRef();
-    const particlesRef = useRef();
-    
-    // Sélection du thème de fond
-    const theme = BACKGROUND_THEMES[backgroundTheme] || BACKGROUND_THEMES.gradient;
+    const nebulaRef = useRef();
 
     // Déterminer quel modèle 3D charger en fonction de la compétence actuelle
     const modelPath = currentSkill
         ? `/models/${currentSkill.name.toLowerCase()}_programming_language.glb`
-        : '/models/python_programming_language.glb'; // Modèle par défaut
+        : '/models/python_programming_language.glb'; // Modèle par défaut quand aucun skill n'est survolé
 
     // Charger dynamiquement le modèle 3D selon le skill survolé
     const { nodes, materials, scene } = useGLTF(modelPath);
@@ -63,17 +31,17 @@ const SkillsHuman = ({
     // Définir des échelles spécifiques par modèle
     const getModelScale = () => {
         if (currentSkill?.name?.toLowerCase() === 'javascript') {
-            return 2.501;
+            return 2.501; // Échelle ajustée pour JavaScript
         }
-        return 2.501; // Échelle par défaut
+        return 2.501; // Échelle par défaut pour Python et autres
     };
 
     // Obtenir les réglages de position pour que la rotation soit centrée correctement
     const getModelPosition = () => {
         if (currentSkill?.name?.toLowerCase() === 'javascript') {
-            return [0, 0, 0];
+            return [0, 0, 0]; // Centrer le modèle JavaScript à l'origine
         }
-        return [-0.002, 0, 0];
+        return [-0.002, 0, 0]; // Position par défaut pour les autres modèles
     };
 
     const modelScale = getModelScale();
@@ -92,16 +60,14 @@ const SkillsHuman = ({
     const { animations: saluteAnimation } = useFBX('/models/animations/salute.fbx');
     const { animations: clappingAnimation } = useFBX('/models/animations/clapping.fbx');
     const { animations: victoryAnimation } = useFBX('/models/animations/victory.fbx');
-    const { animations: danceAnimation } = useFBX('/models/animations/dance.fbx');
 
     idleAnimation[0].name = 'idle';
     saluteAnimation[0].name = 'salute';
     clappingAnimation[0].name = 'clapping';
     victoryAnimation[0].name = 'victory';
-    danceAnimation[0].name = 'dance';
 
     const { actions } = useAnimations(
-        [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0], danceAnimation[0]],
+        [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
         group,
     );
 
@@ -113,293 +79,207 @@ const SkillsHuman = ({
         }
     }, [animationName, actions]);
 
-    // Génération des étoiles pour le fond stellaire - plus brillantes et plus nombreuses
-    const starsCount = 800;
+    // Génération des étoiles pour le fond stellaire
+    const starsCount = 600;
     const starfield = useMemo(() => {
         const temp = [];
         for (let i = 0; i < starsCount; i++) {
-            // Distribution sphérique améliorée
+            // Distribution sphérique pour envelopper la scène
             const phi = Math.random() * Math.PI * 2;
             const theta = Math.random() * Math.PI;
-            const radius = 32 + Math.random() * 25;
+            const radius = 30 + Math.random() * 20;
             
             const x = radius * Math.sin(theta) * Math.cos(phi);
             const y = radius * Math.sin(theta) * Math.sin(phi);
             const z = radius * Math.cos(theta);
             
-            // Variété de tailles pour meilleur effet de profondeur
-            const size = Math.random() * 0.18 + 0.05;
-            const blinkSpeed = Math.random() * 0.08 + 0.02;
+            const size = Math.random() * 0.15 + 0.05;
+            const blinkSpeed = Math.random() * 0.05 + 0.01;
             const blinkOffset = Math.random() * Math.PI * 2;
             
-            // Couleurs subtiles pour les étoiles
-            const colorIndex = Math.floor(Math.random() * 5);
-            const colors = ['#ffffff', '#fffaea', '#eaeeff', '#ffeaea', '#eaffff'];
-            const color = colors[colorIndex];
+            // Variation de couleurs pour les étoiles
+            const colorRand = Math.random();
+            let color;
+            if (colorRand > 0.8) color = "#FFFAE0"; // Jaune pâle
+            else if (colorRand > 0.6) color = "#E6FBFF"; // Bleu pâle
+            else color = "#FFFFFF"; // Blanc
             
             temp.push({ position: [x, y, z], size, blinkSpeed, blinkOffset, color });
         }
         return temp;
     }, []);
 
-    // Génération des aurores pour un effet atmosphérique élégant
-    const aurorasCount = 8;
-    const auroras = useMemo(() => {
+    // Génération des nébuleuses pour le fond
+    const nebulasCount = 12;
+    const nebulas = useMemo(() => {
         const temp = [];
-        for (let i = 0; i < aurorasCount; i++) {
-            const height = 10 + Math.random() * 20;
-            const width = 10 + Math.random() * 30;
-            const posY = 10 + Math.random() * 20;
-            const posX = -25 + Math.random() * 50;
-            const posZ = -25 + Math.random() * 50;
+        for (let i = 0; i < nebulasCount; i++) {
+            const phi = Math.random() * Math.PI * 2;
+            const theta = Math.random() * Math.PI;
+            const radius = 25 + Math.random() * 10;
             
-            const hue = Math.random() * 60 + (i % 2 === 0 ? 180 : 100);
-            const color = `hsl(${hue}, 100%, 70%)`;
+            const x = radius * Math.sin(theta) * Math.cos(phi);
+            const y = radius * Math.sin(theta) * Math.sin(phi);
+            const z = radius * Math.sin(theta) * Math.sin(phi);
             
-            const opacity = 0.1 + Math.random() * 0.3;
-            const waveSpeed = 0.05 + Math.random() * 0.1;
-            const waveAmplitude = 0.2 + Math.random() * 1;
+            const scale = Math.random() * 10 + 5;
+            const rotation = [
+                Math.random() * Math.PI * 2,
+                Math.random() * Math.PI * 2,
+                Math.random() * Math.PI * 2
+            ];
             
-            temp.push({
-                position: [posX, posY, posZ],
-                dimensions: [width, height],
-                color,
-                opacity,
-                waveSpeed,
-                waveAmplitude,
-                rotation: [Math.PI / 2, Math.random() * Math.PI * 2, 0]
-            });
-        }
-        return temp;
-    }, []);
-
-    // Génération d'un système de particules flottantes
-    const particlesCount = 150;
-    const particles = useMemo(() => {
-        const temp = [];
-        for (let i = 0; i < particlesCount; i++) {
-            const x = Math.random() * 40 - 20;
-            const y = Math.random() * 30 - 10;
-            const z = Math.random() * 40 - 20;
+            // Variation de couleurs pour les nébuleuses
+            const colorRand = Math.random();
+            let color;
+            if (colorRand > 0.7) color = skillColor; // Couleur du skill
+            else if (colorRand > 0.4) color = "#4A6D9D"; // Bleu profond
+            else color = "#8E5AB5"; // Violet
             
-            const size = Math.random() * 0.15 + 0.05;
-            const speed = Math.random() * 0.02 + 0.005;
-            const direction = new THREE.Vector3(
-                Math.random() * 2 - 1,
-                Math.random() * 2 - 1,
-                Math.random() * 2 - 1
-            ).normalize().multiplyScalar(speed);
-            
-            // Couleurs variant entre le skill actuel et un bleu clair
-            const mixRatio = Math.random();
-            const skillColorObj = new THREE.Color(skillColor);
-            const accentColor = new THREE.Color("#8ebbff");
-            const color = new THREE.Color().lerpColors(skillColorObj, accentColor, mixRatio);
-            
-            temp.push({ position: [x, y, z], size, direction, color: color.getHexString() });
+            temp.push({ position: [x, y, z], scale, rotation, color });
         }
         return temp;
     }, [skillColor]);
 
-    // Points pour la galaxie de fond avec effet d'animation amélioré
-    const galaxyParticlesCount = 5000;
+    // Points pour la galaxie de fond
+    const galaxyParticlesCount = 3500;
     const galaxyParticles = useMemo(() => {
         const positions = new Float32Array(galaxyParticlesCount * 3);
         const colors = new Float32Array(galaxyParticlesCount * 3);
         const sizes = new Float32Array(galaxyParticlesCount);
-        const speeds = new Float32Array(galaxyParticlesCount);
         
         const colorInside = new THREE.Color(skillColor);
-        const colorOutside = new THREE.Color(theme.colors[1]);
+        const colorMiddle = new THREE.Color("#6B8DB9");
+        const colorOutside = new THREE.Color("#1A2435");
         
         for (let i = 0; i < galaxyParticlesCount; i++) {
             const i3 = i * 3;
             
-            // Position en spirale galaxique plus complexe
-            const radius = Math.pow(Math.random(), 0.5) * (22 + Math.random() * 5);
-            const spinAngle = radius * (2 + Math.random() * 1);
-            const branchAngle = (i % 5) * Math.PI * 2 / 5 + Math.random() * 0.4;
+            // Position en spirale galaxique
+            const radius = Math.random() * 20 + 5;
+            const spinAngle = radius * 2.5;
+            const branchAngle = (i % 3) * Math.PI * 2 / 3;
             
-            // Dispersion naturelle des particules
-            const randomX = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.7;
-            const randomY = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.3;
-            const randomZ = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.7;
+            const randomX = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.5;
+            const randomY = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.5;
+            const randomZ = Math.pow(Math.random(), 3) * (Math.random() < 0.5 ? 1 : -1) * 0.5;
             
             positions[i3] = Math.cos(branchAngle + spinAngle) * radius + randomX;
             positions[i3 + 1] = randomY;
             positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ - 20;
             
-            // Couleur basée sur la distance du centre avec plus de contraste
-            const mixRatio = Math.pow(radius / 27, 1.2);
-            const color = new THREE.Color().lerpColors(colorInside, colorOutside, mixRatio);
+            // Couleur basée sur la distance du centre
+            let color;
+            const mixRatio = radius / 25;
+            
+            if (mixRatio < 0.4) {
+                // Mélange entre colorInside et colorMiddle
+                const localMix = mixRatio / 0.4;
+                color = new THREE.Color().lerpColors(colorInside, colorMiddle, localMix);
+            } else {
+                // Mélange entre colorMiddle et colorOutside
+                const localMix = (mixRatio - 0.4) / 0.6;
+                color = new THREE.Color().lerpColors(colorMiddle, colorOutside, localMix);
+            }
             
             colors[i3] = color.r;
             colors[i3 + 1] = color.g;
             colors[i3 + 2] = color.b;
             
-            // Taille variable des particules avec effet de brillance
-            sizes[i] = (Math.random() * 0.5 + 0.1) * (radius < 5 ? 1.5 : 1);
-            
-            // Vitesse de rotation variable selon la distance
-            speeds[i] = 0.02 - (radius / 27) * 0.015;
+            // Taille variable des étoiles
+            sizes[i] = Math.random() * 0.5 + 0.1;
         }
         
-        return { positions, colors, sizes, speeds };
-    }, [skillColor, theme]);
+        return { positions, colors, sizes };
+    }, [skillColor]);
 
     // Mettre à jour les animations et le background
     useFrame((state, delta) => {
-        // Rotation du personnage - plus fluide et naturelle
+        // Rotation du personnage
         if (group.current) {
-            // Rotation oscillante pour un effet plus vivant
-            group.current.rotation.y += delta * 0.4;
+            group.current.rotation.y += delta * 0.5;
+            // Légère oscillation verticale pour donner de la vie
             group.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
         }
 
         // Animation du dome de fond
         if (backgroundRef.current) {
-            backgroundRef.current.rotation.y += delta * 0.03;
-            backgroundRef.current.rotation.x += delta * 0.01;
+            backgroundRef.current.rotation.y += delta * 0.05;
         }
         
-        // Animation de la galaxie avec effet de vitesse variable
-        if (galaxyRef.current && galaxyRef.current.geometry.attributes.position) {
-            galaxyRef.current.rotation.y += delta * 0.01;
-            
-            // Animation des particules individuelles de la galaxie
-            const positions = galaxyRef.current.geometry.attributes.position.array;
-            const speeds = galaxyParticles.speeds;
-            
-            for (let i = 0; i < galaxyParticlesCount; i++) {
-                const i3 = i * 3;
-                const x = positions[i3];
-                const z = positions[i3 + 2];
-                
-                // Calcul de la nouvelle position avec rotation variable
-                const angle = speeds[i] * state.clock.elapsedTime;
-                const radius = Math.sqrt(x * x + z * z);
-                
-                if (radius > 0) {
-                    const currentAngle = Math.atan2(z, x);
-                    positions[i3] = Math.cos(currentAngle + angle) * radius;
-                    positions[i3 + 2] = Math.sin(currentAngle + angle) * radius;
-                }
-            }
-            
-            galaxyRef.current.geometry.attributes.position.needsUpdate = true;
+        // Animation de la galaxie
+        if (galaxyRef.current) {
+            galaxyRef.current.rotation.y += delta * 0.02;
         }
         
-        // Animation des aurores
-        if (auroraRef.current) {
-            auroraRef.current.children.forEach((aurora, i) => {
-                const data = auroras[i];
-                aurora.material.opacity = data.opacity + Math.sin(state.clock.elapsedTime * data.waveSpeed) * 0.1;
-                aurora.position.y += Math.sin(state.clock.elapsedTime * data.waveSpeed) * data.waveAmplitude * delta;
-                aurora.rotation.z += delta * 0.03;
+        // Animation des nébuleuses
+        if (nebulaRef.current) {
+            nebulaRef.current.rotation.z += delta * 0.01;
+            nebulaRef.current.children.forEach((nebula, i) => {
+                // Rotation individuelle des nébuleuses
+                nebula.rotation.x += delta * 0.01;
+                nebula.rotation.z += delta * 0.01 * (i % 2 === 0 ? 1 : -1);
             });
-            
-            auroraRef.current.rotation.y += delta * 0.01;
         }
         
         // Animation du champ d'étoiles
         if (starfieldRef.current) {
             starfieldRef.current.children.forEach((star, i) => {
                 const data = starfield[i];
-                // Effet de scintillement amélioré
+                // Effet de scintillement
                 const blink = 0.7 + Math.sin(state.clock.elapsedTime * data.blinkSpeed + data.blinkOffset) * 0.3;
                 star.scale.set(blink * data.size, blink * data.size, blink * data.size);
-                
-                // Micro-mouvement pour un effet plus vivant
-                star.position.x += Math.sin(state.clock.elapsedTime * 0.1 + i) * 0.001;
-                star.position.y += Math.cos(state.clock.elapsedTime * 0.1 + i) * 0.001;
             });
             
             // Légère rotation du champ d'étoiles
-            starfieldRef.current.rotation.y += delta * 0.0005;
-            starfieldRef.current.rotation.x += delta * 0.0003;
-        }
-        
-        // Animation des particules flottantes
-        if (particlesRef.current) {
-            particlesRef.current.children.forEach((particle, i) => {
-                const data = particles[i];
-                
-                // Mouvement de la particule
-                particle.position.x += data.direction.x;
-                particle.position.y += data.direction.y;
-                particle.position.z += data.direction.z;
-                
-                // Faire rebondir les particules aux limites
-                const bounds = 25;
-                if (Math.abs(particle.position.x) > bounds) {
-                    data.direction.x *= -1;
-                }
-                if (Math.abs(particle.position.y) > bounds) {
-                    data.direction.y *= -1;
-                }
-                if (Math.abs(particle.position.z) > bounds) {
-                    data.direction.z *= -1;
-                }
-                
-                // Effet de pulsation subtil
-                const pulse = 0.9 + Math.sin(state.clock.elapsedTime * 0.5 + i * 0.1) * 0.1;
-                particle.scale.set(pulse * data.size, pulse * data.size, pulse * data.size);
-            });
+            starfieldRef.current.rotation.y += delta * 0.001;
+            starfieldRef.current.rotation.x += delta * 0.0005;
         }
     });
 
     return (
         <>
-            {/* Environnement immersif avec brouillard coloré */}
-            <fog attach="fog" args={[theme.fogColor, theme.fogNear, theme.fogFar]} />
+            {/* Environnement cosmique - bleu profond au lieu de noir */}
+            <fog attach="fog" args={['#0A1931', 20, 50]} />
 
             {/* Lumières pour l'ambiance */}
             <ambientLight intensity={0.3} />
-            
-            {/* Lumière principale colorée selon le skill */}
             <directionalLight
                 position={[5, 5, 5]}
-                intensity={0.7}
+                intensity={0.8}
                 color={skillColor}
-                castShadow
-                shadow-mapSize={[1024, 1024]}
             />
-            
-            {/* Lumière d'accent pour dynamiser la scène */}
             <pointLight
                 position={[-5, 2, -8]}
                 intensity={0.6}
                 color="#6e84ff"
-                distance={30}
+                distance={25}
                 decay={2}
             />
-            
-            {/* Lumière ponctuelle pour le personnage */}
             <spotLight
                 position={[0, 8, 0]}
                 intensity={0.7}
                 angle={0.6}
                 penumbra={0.8}
                 color="#ffffff"
-                castShadow
             />
             
-            {/* Lumière d'ambiance au sol */}
+            {/* Lumière d'accentuation au sol */}
             <pointLight
-                position={[0, -1, 0]}
-                intensity={0.5}
+                position={[0, -1.5, 0]}
+                intensity={0.8}
                 color={skillColor}
-                distance={7}
+                distance={8}
                 decay={2}
             />
 
-            {/* Fond étoilé amélioré */}
+            {/* Fond étoilé avec couleurs variées */}
             <group ref={starfieldRef}>
                 {starfield.map((star, i) => (
                     <mesh key={i} position={star.position}>
-                        <sphereGeometry args={[star.size, 8, 8]} />
+                        <sphereGeometry args={[star.size, 4, 4]} />
                         <meshBasicMaterial 
-                            color={star.color} 
+                            color={star.color}
                             transparent 
                             opacity={0.9} 
                         />
@@ -407,7 +287,7 @@ const SkillsHuman = ({
                 ))}
             </group>
 
-            {/* Galaxie spirale en arrière-plan avec plus de détails */}
+            {/* Galaxie spirale en arrière-plan avec dégradé de couleurs */}
             <points ref={galaxyRef}>
                 <bufferGeometry>
                     <bufferAttribute 
@@ -440,19 +320,19 @@ const SkillsHuman = ({
                 />
             </points>
 
-            {/* Aurores boréales pour un effet atmosphérique élégant */}
-            <group ref={auroraRef}>
-                {auroras.map((aurora, i) => (
+            {/* Nébuleuses colorées */}
+            <group ref={nebulaRef}>
+                {nebulas.map((nebula, i) => (
                     <mesh 
                         key={i} 
-                        position={aurora.position}
-                        rotation={aurora.rotation}
+                        position={nebula.position}
+                        rotation={nebula.rotation}
                     >
-                        <planeGeometry args={aurora.dimensions} />
+                        <planeGeometry args={[nebula.scale, nebula.scale]} />
                         <meshBasicMaterial
-                            color={aurora.color}
+                            color={nebula.color}
                             transparent
-                            opacity={aurora.opacity}
+                            opacity={0.15}
                             blending={THREE.AdditiveBlending}
                             depthWrite={false}
                             side={THREE.DoubleSide}
@@ -461,128 +341,85 @@ const SkillsHuman = ({
                 ))}
             </group>
 
-            {/* Particules flottantes */}
-            <group ref={particlesRef}>
-                {particles.map((particle, i) => (
-                    <mesh key={i} position={particle.position}>
-                        <sphereGeometry args={[particle.size, 8, 8]} />
-                        <meshBasicMaterial
-                            color={`#${particle.color}`}
-                            transparent
-                            opacity={0.7}
-                            blending={THREE.AdditiveBlending}
-                            depthWrite={false}
-                        />
-                    </mesh>
-                ))}
-            </group>
-
-            {/* Dôme cosmique avec gradient */}
+            {/* Dôme cosmique avec dégradé */}
             <mesh ref={backgroundRef} position={[0, 0, 0]}>
-                <sphereGeometry args={[45, 64, 64]} />
-                <shaderMaterial
-                    vertexShader={`
-                        varying vec3 vPosition;
-                        void main() {
-                            vPosition = position;
-                            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-                        }
-                    `}
-                    fragmentShader={`
-                        uniform vec3 colorA;
-                        uniform vec3 colorB;
-                        uniform vec3 colorC;
-                        varying vec3 vPosition;
-                        void main() {
-                            float y = normalize(vPosition).y * 0.5 + 0.5;
-                            vec3 color = mix(colorA, colorB, y);
-                            color = mix(color, colorC, length(normalize(vPosition).xz) * 0.5);
-                            gl_FragColor = vec4(color, 1.0);
-                        }
-                    `}
-                    uniforms={{
-                        colorA: { value: new THREE.Color(theme.colors[0]) },
-                        colorB: { value: new THREE.Color(theme.colors[1]) },
-                        colorC: { value: new THREE.Color(theme.colors[2]) }
-                    }}
+                <sphereGeometry args={[40, 64, 64]} />
+                <meshBasicMaterial
+                    color="#0A1931"  // Bleu nuit profond
                     side={THREE.BackSide}
+                    transparent
+                    opacity={1}
+                />
+            </mesh>
+            
+            {/* Dôme intérieur pour effet de profondeur */}
+            <mesh position={[0, 0, 0]}>
+                <sphereGeometry args={[38, 32, 32]} />
+                <meshBasicMaterial
+                    color="#152747"  // Bleu un peu plus clair
+                    side={THREE.BackSide}
+                    transparent
+                    opacity={0.5}
                 />
             </mesh>
 
-            {/* Plate-forme/socle pour le personnage - plus élégant */}
+            {/* Plate-forme/socle pour le personnage */}
             <mesh position={[0, -2, 0]} rotation={[0, 0, 0]} receiveShadow>
                 <cylinderGeometry args={[3, 3.5, 0.3, 32]} />
                 <meshStandardMaterial
                     color={skillColor}
-                    metalness={0.8}
-                    roughness={0.2}
+                    metalness={0.7}
+                    roughness={0.3}
                     emissive={skillColor}
-                    emissiveIntensity={0.3}
+                    emissiveIntensity={0.2}
                 />
             </mesh>
 
-            {/* Anneaux lumineux au sol */}
-            <group>
-                {/* Anneau principal */}
-                <mesh position={[0, -1.84, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-                    <ringGeometry args={[2.8, 3.6, 64]} />
-                    <meshBasicMaterial
-                        color={skillColor}
-                        transparent
-                        opacity={0.6}
-                        side={THREE.DoubleSide}
-                    />
-                </mesh>
-                
-                {/* Anneau secondaire */}
-                <mesh position={[0, -1.83, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-                    <ringGeometry args={[2.4, 2.6, 64]} />
-                    <meshBasicMaterial
-                        color="#ffffff"
-                        transparent
-                        opacity={0.3}
-                        side={THREE.DoubleSide}
-                        blending={THREE.AdditiveBlending}
-                    />
-                </mesh>
-                
-                {/* Disque lumineux */}
-                <mesh position={[0, -1.82, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-                    <circleGeometry args={[3.8, 64]} />
-                    <meshBasicMaterial
-                        color={skillColor}
-                        transparent
-                        opacity={0.15}
-                        blending={THREE.AdditiveBlending}
-                    />
-                </mesh>
-            </group>
-
-            {/* Effet de lumière volumétrique */}
-            <mesh position={[0, 5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-                <coneGeometry args={[5, 15, 32, 1, true]} />
+            {/* Cercle lumineux au sol - principal */}
+            <mesh position={[0, -1.84, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                <ringGeometry args={[2.8, 3.6, 32]} />
                 <meshBasicMaterial
                     color={skillColor}
                     transparent
-                    opacity={0.08}
-                    blending={THREE.AdditiveBlending}
+                    opacity={0.6}
                     side={THREE.DoubleSide}
-                    depthWrite={false}
+                />
+            </mesh>
+            
+            {/* Cercle lumineux au sol - accent */}
+            <mesh position={[0, -1.83, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                <ringGeometry args={[2.5, 2.7, 32]} />
+                <meshBasicMaterial
+                    color="#FFFFFF"
+                    transparent
+                    opacity={0.3}
+                    side={THREE.DoubleSide}
+                />
+            </mesh>
+            
+            {/* Cercle lumineux diffus */}
+            <mesh position={[0, -1.82, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[8, 8]} />
+                <meshBasicMaterial
+                    color={skillColor}
+                    transparent
+                    opacity={0.1}
+                    blending={THREE.AdditiveBlending}
                 />
             </mesh>
 
-            {/* Particules holographiques autour du modèle */}
-            <points position={[0, 0, 0]}>
-                <sphereGeometry args={[4, 20, 20]} />
-                <pointsMaterial
-                    size={0.1}
+            {/* Rayon lumineux depuis le haut */}
+            <mesh position={[0, 10, 0]} rotation={[Math.PI, 0, 0]}>
+                <coneGeometry args={[4, 15, 16, 1, true]} />
+                <meshBasicMaterial
                     color={skillColor}
                     transparent
-                    opacity={0.4}
+                    opacity={0.03}
+                    side={THREE.DoubleSide}
                     blending={THREE.AdditiveBlending}
                     depthWrite={false}
                 />
-            </points>
+            </mesh>
 
             {/* Groupe contenant le personnage */}
             <group {...props} dispose={null} ref={group}>
@@ -592,7 +429,6 @@ const SkillsHuman = ({
                         scale={modelScale}
                         position={modelPosition}
                         rotation={[0, 0, 0]}
-                        castShadow
                     />
                 ) : (
                     <>
@@ -636,7 +472,7 @@ useGLTF.preload('/models/python_programming_language.glb');
 
 // Préchargement des modèles de chaque skill
 const preloadSkillModels = () => {
-    const skills = ['python', 'javascript', 'sql'];
+    const skills = ['python', 'javascript', 'sql', 'react', 'nodejs'];
     skills.forEach(skill => {
         useGLTF.preload(`/models/${skill}_programming_language.glb`);
     });
