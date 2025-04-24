@@ -106,8 +106,8 @@ export const veilleTopics = [
 export const myProjects = [
     {
         title: 'Coach Relation - Plateforme de Conseil Conjugal',
-        desc: 'Coach Relation est un espace numérique dédié au développement personnel et conjugal. Notre plateforme offre des outils pratiques et des conseils personnalisés pour aider les couples à construire une relation plus forte et équilibrée.',
-        subdesc: 'La plateforme combine coaching professionnel et technologie moderne avec une interface intuitive permettant aux couples de suivre leur progression, accéder à des ressources ciblées et participer à des exercices interactifs pour renforcer leur lien.',
+        desc: 'Une plateforme numérique dédiée au développement personnel et conjugal, offrant aux couples des outils pratiques et des conseils personnalisés pour renforcer leur relation.',
+        subdesc: 'Cette solution combine coaching professionnel et technologie moderne avec une interface intuitive permettant aux couples de suivre leur progression, accéder à des ressources adaptées à leurs besoins spécifiques et participer à des exercices interactifs pour améliorer leur communication et compréhension mutuelle.',
         href: 'https://github.com/LaKensak/DjangoNextApp',
         hrefSite: 'https://djangoproject1-frontend.onrender.com/',
         texture: '/textures/project/project1.mp4',
@@ -143,9 +143,9 @@ export const myProjects = [
     },
     {
         title: 'F1 - Légendes et Grand Prix',
-        desc: 'Ce site est dédié aux passionnés de Formule 1, offrant une exploration complète des meilleurs pilotes, des circuits légendaires et des rivalités emblématiques qui ont marqué l’histoire de ce sport.',
+        desc: 'Un portail d\'information complet pour les passionnés de Formule 1, permettant d\'explorer l\'histoire des pilotes légendaires, des circuits emblématiques et des rivalités marquantes de ce sport.',
         subdesc:
-            'Découvrez des informations détaillées sur des pilotes comme Ayrton Senna, Lewis Hamilton et Michael Schumacher, explorez les circuits mythiques tels que Spa-Francorchamps et Monaco, et revivez les rivalités marquantes de la F1. Une véritable immersion dans l’univers captivant du sport automobile.',
+            'Ce site offre une véritable immersion dans l\'univers de la F1 avec des sections détaillées sur les champions comme Ayrton Senna et Michael Schumacher, des analyses des circuits mythiques comme Monaco et Spa-Francorchamps, et des récits des confrontations historiques qui ont façonné ce sport automobile.',
         href: 'https://github.com/LaKensak/F1-New',
         hrefSite: 'https://rcharkaoui.alwaysdata.net/',
         texture: '/textures/project/project2.mp4',
@@ -181,9 +181,9 @@ export const myProjects = [
     },
     {
         title: 'SIO Shop - Gestion automobile',
-        desc: 'Application de gestion développée en C# pour permettre aux employés de suivre les clients, les ventes de véhicules et les produits proposés.',
+        desc: 'Un logiciel de gestion interne conçu pour les concessions automobiles, permettant de centraliser le suivi des clients, la gestion des ventes de véhicules et l\'inventaire des produits.',
         subdesc:
-            'SIO Shop est une solution interne intuitive conçue pour simplifier le suivi des clients, l’administration des ventes de voitures et la gestion des produits en stock. Développée en C#, cette application répond aux besoins d’une concession automobile moderne.',
+            'Cette application professionnelle développée en C# offre aux employés une interface intuitive pour traiter l\'ensemble du cycle de vente automobile : enregistrement des clients, suivi des prospects, gestion des ventes, et administration de l\'inventaire des véhicules et accessoires en temps réel.',
         href: 'https://github.com/LaKensak/SIO-SHOP',
         texture: '/textures/project/project3.mp4',
         logo: '/assets/project-logo3.png',
@@ -198,7 +198,7 @@ export const myProjects = [
         tags: [
             {
                 id: 1,
-                name: 'React.js',
+                name: 'C#',
                 path: '/assets/icons8-c-sharp-logo-96.png',
             },
             {
@@ -210,9 +210,9 @@ export const myProjects = [
     },
     {
         title: 'France Mobilier - Application Web PHP (MVC)',
-        desc: 'Application web développée en PHP pour gérer un catalogue de meubles et accessoires avec filtres par catégorie.',
+        desc: 'Une application web e-commerce permettant aux clients de consulter et filtrer un catalogue complet de meubles et accessoires de décoration par catégories.',
         subdesc:
-            'France Mobilier est une application web construite en PHP selon le modèle MVC. Elle permet aux utilisateurs de consulter un catalogue structuré de produits de mobilier, avec photos, descriptions et prix. L’interface intègre un système de tri par catégories, rendant la navigation intuitive. C’est une solution simple et efficace pour un magasin de meubles souhaitant digitaliser son catalogue.',
+            'Développée selon l\'architecture MVC en PHP, cette solution digitale transforme l\'expérience d\'achat de mobilier en permettant aux utilisateurs de naviguer facilement dans un catalogue structuré avec photos, descriptions détaillées et prix. Le système de filtrage par catégories optimise la recherche de produits spécifiques pour une expérience utilisateur fluide et efficace.',
         href: 'https://github.com/LaKensak/MVC_FranceMobilier',
         texture: '/textures/project/project4.mp4',
         logo: '/assets/project-logo3.png',
