@@ -208,6 +208,40 @@ export const myProjects = [
             },
         ],
     },
+    {
+        title: 'France Mobilier - Application Web PHP (MVC)',
+        desc: 'Application web développée en PHP pour gérer un catalogue de meubles et accessoires avec filtres par catégorie.',
+        subdesc:
+            'France Mobilier est une application web construite en PHP selon le modèle MVC. Elle permet aux utilisateurs de consulter un catalogue structuré de produits de mobilier, avec photos, descriptions et prix. L’interface intègre un système de tri par catégories, rendant la navigation intuitive. C’est une solution simple et efficace pour un magasin de meubles souhaitant digitaliser son catalogue.',
+        href: 'https://github.com/LaKensak/SIO-SHOP',
+        texture: '/textures/project/project4.mp4',
+        logo: '/assets/project-logo3.png',
+        logoStyle: {
+            backgroundColor: '#60f5a1',
+            background:
+                'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+            border: '0.2px solid rgba(208, 213, 221, 1)',
+            boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+        },
+        spotlight: '/assets/spotlight3.png',
+        tags: [
+            {
+                id: 1,
+                name: 'PHP',
+                path: '/assets/icons8-php-logo-96.png',
+            },
+            {
+                id: 2,
+                name: 'MySQL',
+                path: 'assets/icons8-mysql-logo-48.png',
+            },
+            {
+                id: 3,
+                name: 'MVC',
+                path: '/assets/icons8-structure-96.webp',
+            }
+        ],
+    },    
 ];
 
 
