@@ -288,7 +288,7 @@ export const workExperiences = [
         id: 4,
         name: 'Modern Solidarity',
         pos: 'Stage',
-        duration: '27-05-2024 - 21-06-2024',
+        duration: '27/05/2024 - 21/06/2024',
         title: "j'ai conçu et réalisé une bibliothèque de gestion, offrant une interface conviviale pour l’ajout, la recherche et la modification de titres. Ce projet m'a permis de renforcer mes compétences en programmation orientée objet et en gestion des données, tout en mettant en pratique des principes de conception logicielle.",
         icon: '/assets/modern.png',
         animation: 'clapping',
