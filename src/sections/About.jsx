@@ -16,7 +16,7 @@ const About = () => {
     }
 
     const ouvrirTableau = () => {
-        window.open('/assets/91Tableau de synthèse .xlsx', '_blank');
+        window.open('/assets/91Tableau de synthèse.xlsx', '_blank');
     }
 
     return (
