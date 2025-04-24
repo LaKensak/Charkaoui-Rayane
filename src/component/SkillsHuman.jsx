@@ -636,7 +636,7 @@ useGLTF.preload('/models/python_programming_language.glb');
 
 // Préchargement des modèles de chaque skill
 const preloadSkillModels = () => {
-    const skills = ['python', 'javascript', 'sql', 'react', 'nodejs', 'typescript'];
+    const skills = ['python', 'javascript', 'sql'];
     skills.forEach(skill => {
         useGLTF.preload(`/models/${skill}_programming_language.glb`);
     });
