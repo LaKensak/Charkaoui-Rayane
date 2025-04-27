@@ -35,7 +35,7 @@ const Contact = () => {
                 'Pwvn5EWB9ZCiJOGWP')
 
             setLoading(false);
-            alert('Votre message a bien été envoyer')
+            alert('Votre message à bien été envoyer')
 
             setForm({
                 name: '',
