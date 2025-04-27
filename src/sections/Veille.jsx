@@ -758,21 +758,7 @@ const Veille = () => {
                         </div>
                     </div>
                 )}
-
-                {/* Nouveau bloc: Infobulles thématiques */}
-                <div className="fixed bottom-6 right-6 z-40">
-                    <button
-                        onClick={() => {
-                            // Implémentation pour afficher/masquer le panneau d'infobulles
-                        }}
-                        className="bg-purple-600 hover:bg-purple-700 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-105"
-                        title="Afficher les tendances"
-                    >
-                        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8V16M12 11V16M8 14V16M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
+               
             </div>
         </section>
     );
