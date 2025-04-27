@@ -107,7 +107,7 @@ export const myProjects = [
     {
         title: 'Coach Relation - Plateforme de Conseil Conjugal',
         desc: 'Une plateforme numérique dédiée au développement personnel et conjugal, offrant aux couples des outils pratiques et des conseils personnalisés pour renforcer leur relation.',
-        subdesc: 'Cette solution combine coaching professionnel et technologie moderne avec une interface intuitive permettant aux couples de suivre leur progression, accéder à des ressources adaptées à leurs besoins spécifiques et participer à des exercices interactifs pour améliorer leur communication et compréhension mutuelle.',
+        subdesc: 'Ce projet a été développé avec une architecture moderne combinant React.js et TypeScript pour le frontend, et Django pour le backend. L\'interface utilisateur, conçue avec TailwindCSS, offre une expérience fluide et responsive permettant aux couples de suivre leur progression, d\'accéder à des ressources adaptées et de participer à des exercices interactifs. Le backend Django gère l\'authentification sécurisée, le stockage des données utilisateur et fournit une API RESTful pour la communication avec le frontend.',
         href: 'https://github.com/LaKensak/DjangoNextApp',
         hrefSite: 'https://djangoproject1-frontend.onrender.com/',
         texture: '/textures/project/project1.mp4',
@@ -144,8 +144,7 @@ export const myProjects = [
     {
         title: 'F1 - Légendes et Grand Prix',
         desc: 'Un portail d\'information complet pour les passionnés de Formule 1, permettant d\'explorer l\'histoire des pilotes légendaires, des circuits emblématiques et des rivalités marquantes de ce sport.',
-        subdesc:
-            'Ce site offre une véritable immersion dans l\'univers de la F1 avec des sections détaillées sur les champions comme Ayrton Senna et Michael Schumacher, des analyses des circuits mythiques comme Monaco et Spa-Francorchamps, et des récits des confrontations historiques qui ont façonné ce sport automobile.',
+        subdesc: 'Développé en utilisant JavaScript pour la partie frontend avec une interface dynamique améliorée par TailwindCSS, ce site présente une architecture backend robuste basée sur PHP et une base de données MySQL. Le système comprend une gestion de contenu personnalisée permettant d\'ajouter facilement des articles sur les champions comme Ayrton Senna et Michael Schumacher, des fiches détaillées sur les circuits emblématiques comme Monaco et Spa-Francorchamps, ainsi qu\'une section dédiée aux événements historiques de la F1. L\'interface responsive s\'adapte à tous les appareils pour offrir une expérience utilisateur optimale.',
         href: 'https://github.com/LaKensak/F1-New',
         hrefSite: 'https://rcharkaoui.alwaysdata.net/',
         texture: '/textures/project/project2.mp4',
@@ -182,8 +181,7 @@ export const myProjects = [
     {
         title: 'SIO Shop - Gestion automobile',
         desc: 'Un logiciel de gestion interne conçu pour les concessions automobiles, permettant de centraliser le suivi des clients, la gestion des ventes de véhicules et l\'inventaire des produits.',
-        subdesc:
-            'Cette application professionnelle développée en C# offre aux employés une interface intuitive pour traiter l\'ensemble du cycle de vente automobile : enregistrement des clients, suivi des prospects, gestion des ventes, et administration de l\'inventaire des véhicules et accessoires en temps réel.',
+        subdesc: 'Cette application a été entièrement développée en C# avec le framework .NET, exploitant l\'architecture Windows Forms pour créer une interface desktop intuitive et efficace. La base de données MySQL assure un stockage sécurisé des informations clients, des inventaires et des transactions. Le logiciel intègre des fonctionnalités avancées comme la génération automatique de devis et factures au format PDF, un tableau de bord personnalisable présentant les KPIs essentiels, et un système d\'alertes pour le suivi des prospects. Une architecture en couches (présentation, métier, accès aux données) garantit la maintenabilité et l\'évolutivité de l\'application.',
         href: 'https://github.com/LaKensak/SIO-SHOP',
         texture: '/textures/project/project3.mp4',
         logo: '/assets/project-logo3.png',
@@ -211,8 +209,7 @@ export const myProjects = [
     {
         title: 'France Mobilier - Application Web PHP (MVC)',
         desc: 'Une application web e-commerce permettant aux clients de consulter et filtrer un catalogue complet de meubles et accessoires de décoration par catégories.',
-        subdesc:
-            'Développée selon l\'architecture MVC en PHP, cette solution digitale transforme l\'expérience d\'achat de mobilier en permettant aux utilisateurs de naviguer facilement dans un catalogue structuré avec photos, descriptions détaillées et prix. Le système de filtrage par catégories optimise la recherche de produits spécifiques pour une expérience utilisateur fluide et efficace.',
+        subdesc: 'Ce projet e-commerce a été réalisé en PHP natif suivant strictement le pattern architectural MVC (Modèle-Vue-Contrôleur) pour assurer une séparation claire des responsabilités dans le code. Le frontend utilise HTML5, CSS3 et JavaScript pour créer une interface utilisateur responsive et attrayante. Une base de données MySQL optimisée stocke le catalogue produit avec toutes leurs caractéristiques (dimensions, matériaux, disponibilité) et les informations clients. Le système intègre un moteur de recherche avancé avec filtres multicritères (prix, style, matériaux) et un panier d\'achat persistant utilisant les sessions PHP. L\'administration du catalogue est facilitée par un back-office sécurisé permettant la gestion complète des produits et catégories.',
         href: 'https://github.com/LaKensak/MVC_FranceMobilier',
         texture: '/textures/project/project4.mp4',
         logo: '/assets/project-logo3.png',
@@ -243,7 +240,6 @@ export const myProjects = [
         ],
     },    
 ];
-
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
     return {
