@@ -605,7 +605,7 @@ const Veille = () => {
                                     {/* Événement 1 */}
                                     <div className="flex">
                                         <div className="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center z-10 flex-shrink-0">
-                                            <span className="text-white text-xs font-bold">2025</span>
+                                            <span className="text-white text-xs font-bold">2029</span>
                                         </div>
                                         <div className="ml-6 p-3 bg-black bg-opacity-30 rounded-lg flex-grow">
                                             <p className="text-white font-semibold">Déploiement des infrastructures V2X à grande échelle</p>
@@ -617,19 +617,6 @@ const Veille = () => {
 
                                     {/* Événement 2 */}
                                     <div className="flex">
-                                        <div className="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center z-10 flex-shrink-0">
-                                            <span className="text-white text-xs font-bold">2024</span>
-                                        </div>
-                                        <div className="ml-6 p-3 bg-black bg-opacity-30 rounded-lg flex-grow">
-                                            <p className="text-white font-semibold">Standardisation des protocoles de sécurité V2X</p>
-                                            <p className="text-sm text-gray-400 mt-1">
-                                                Adoption des standards IEEE 1609.2X pour la sécurisation des communications véhiculaires.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Événement 3 */}
-                                    <div className="flex">
                                         <div className="w-8 h-8 rounded-full bg-purple-600  flex items-center justify-center z-10 flex-shrink-0">
                                             <span className="text-white text-xs font-bold">2023</span>
                                         </div>
@@ -640,6 +627,20 @@ const Veille = () => {
                                             </p>
                                         </div>
                                     </div>
+
+                                    {/* Événement 3 */}
+                                    <div className="flex">
+                                        <div className="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center z-10 flex-shrink-0">
+                                            <span className="text-white text-xs font-bold">2022</span>
+                                        </div>
+                                        <div className="ml-6 p-3 bg-black bg-opacity-30 rounded-lg flex-grow">
+                                            <p className="text-white font-semibold">Standardisation des protocoles de sécurité V2X</p>
+                                            <p className="text-sm text-gray-400 mt-1">
+                                                Adoption des standards IEEE 1609.2X pour la sécurisation des communications véhiculaires.
+                                            </p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
