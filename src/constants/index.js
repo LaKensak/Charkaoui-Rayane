@@ -107,7 +107,7 @@ export const myProjects = [
     {
         title: 'Coach Relation - Plateforme de Conseil Conjugal',
         desc: 'Une plateforme numérique dédiée au développement personnel et conjugal, offrant aux couples des outils pratiques et des conseils personnalisés pour renforcer leur relation.',
-        subdesc: 'Ce projet a été développé avec une architecture moderne combinant React.js et TypeScript pour le frontend, et Django pour le backend. L\'interface utilisateur, conçue avec TailwindCSS, offre une expérience fluide et responsive permettant aux couples de suivre leur progression, d\'accéder à des ressources adaptées et de participer à des exercices interactifs. Le backend Django gère l\'authentification sécurisée, le stockage des données utilisateur et fournit une API RESTful pour la communication avec le frontend.',
+        subdesc: 'Ce projet a été développé avec une architecture moderne combinant React.js et TypeScript pour le frontend, et Django pour le backend. L\'interface utilisateur, conçue avec TailwindCSS, offre une expérience fluide et responsive permettant aux couples de suivre leur progression, d\'accéder à des ressources adaptées et de participer à des exercices interactifs. Le backend Django gère l\'authentification sécurisée, le stockage des données utilisateur et fournit une API REST pour la communication avec le frontend.',
         href: 'https://github.com/LaKensak/DjangoNextApp',
         hrefSite: 'https://djangoproject1-frontend.onrender.com/',
         texture: '/textures/project/project1.mp4',
@@ -181,7 +181,7 @@ export const myProjects = [
     {
         title: 'SIO Shop - Gestion automobile',
         desc: 'Un logiciel de gestion interne conçu pour les concessions automobiles, permettant de centraliser le suivi des clients, la gestion des ventes de véhicules et l\'inventaire des produits.',
-        subdesc: 'Cette application a été entièrement développée en C# avec le framework .NET, exploitant l\'architecture Windows Forms pour créer une interface desktop intuitive et efficace. La base de données MySQL assure un stockage sécurisé des informations clients, des inventaires et des transactions. Le logiciel intègre des fonctionnalités avancées comme la génération automatique de devis et factures au format PDF, un tableau de bord personnalisable présentant les KPIs essentiels, et un système d\'alertes pour le suivi des prospects. Une architecture en couches (présentation, métier, accès aux données) garantit la maintenabilité et l\'évolutivité de l\'application.',
+        subdesc: 'Ce projet académique a été développé en C# dans le cadre de ma formation, utilisant le framework .NET avec Windows Forms pour l\'interface utilisateur. La base de données MySQL stocke l\'ensemble des informations clients, véhicules et transactions. Le logiciel permet la gestion complète du cycle commercial automobile : création de fiches clients, enregistrement des véhicules avec leurs caractéristiques techniques, suivi des ventes et génération de documents commerciaux. L\'application suit une architecture en couches pour séparer la logique métier, la présentation et l\'accès aux données, mettant en pratique les concepts de programmation orientée objet enseignés en cours.',
         href: 'https://github.com/LaKensak/SIO-SHOP',
         texture: '/textures/project/project3.mp4',
         logo: '/assets/project-logo3.png',
@@ -209,7 +209,7 @@ export const myProjects = [
     {
         title: 'France Mobilier - Application Web PHP (MVC)',
         desc: 'Une application web e-commerce permettant aux clients de consulter et filtrer un catalogue complet de meubles et accessoires de décoration par catégories.',
-        subdesc: 'Ce projet e-commerce a été réalisé en PHP natif suivant strictement le pattern architectural MVC (Modèle-Vue-Contrôleur) pour assurer une séparation claire des responsabilités dans le code. Le frontend utilise HTML5, CSS3 et JavaScript pour créer une interface utilisateur responsive et attrayante. Une base de données MySQL optimisée stocke le catalogue produit avec toutes leurs caractéristiques (dimensions, matériaux, disponibilité) et les informations clients. Le système intègre un moteur de recherche avancé avec filtres multicritères (prix, style, matériaux) et un panier d\'achat persistant utilisant les sessions PHP. L\'administration du catalogue est facilitée par un back-office sécurisé permettant la gestion complète des produits et catégories.',
+        subdesc: 'Réalisé dans le cadre de mes études, ce projet pédagogique m\'a permis d\'appliquer le pattern MVC (Modèle-Vue-Contrôleur) en PHP natif. L\'application web e-commerce comprend un frontend en HTML5/CSS3/JavaScript offrant une interface conviviale pour parcourir et filtrer le catalogue de mobilier. La base de données MySQL gère les produits, catégories et utilisateurs avec des relations optimisées. Le système inclut des fonctionnalités comme la recherche par filtres, un panier d\'achat utilisant les sessions PHP, et un panneau d\'administration pour la gestion du catalogue. Ce projet m\'a permis de mettre en pratique les concepts de développement web appris en cours tout en travaillant sur un cas concret d\'application e-commerce.',
         href: 'https://github.com/LaKensak/MVC_FranceMobilier',
         texture: '/textures/project/project4.mp4',
         logo: '/assets/project-logo3.png',
@@ -238,7 +238,7 @@ export const myProjects = [
                 path: '/assets/icons8-structure-96.webp',
             }
         ],
-    },    
+    },     
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
