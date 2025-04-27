@@ -277,7 +277,7 @@ export const workExperiences = [
     pos: 'Stage',
     duration: '13/11/2024 - 22/12/2024',
     title: "En tant que stagiaire, j'ai développé une plateforme de conseil conjugal 'Coach Relation' où les utilisateurs peuvent prendre des rendez-vous avec des tarifs personnalisés, intégrant le système de paiement Stripe. Réalisée avec React.js/TypeScript pour le frontend et Django pour le backend, l'application offre aux couples des outils pratiques pour améliorer leur communication et leur relation.",
-    icon: '/assets/proj.png',
+    icon: '/assets/proj-removebg-preview.png',
     animation: 'salute',
 },
     {
