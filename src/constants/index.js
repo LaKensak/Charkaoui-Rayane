@@ -244,7 +244,7 @@ export const myProjects = [
     ],
 },
     {
-    title: 'Bibliothèque Municipale - Système de Gestion',
+    title: 'Bibliothèque - Système de Gestion',
     desc: 'Application console en C# permettant la gestion complète d\'une bibliothèque avec suivi des livres, des membres et des emprunts.',
     subdesc: 'Développée en C# avec le framework .NET, cette application console offre une interface utilisateur textuelle intuitive pour gérer l\'ensemble des opérations d\'une bibliothèque. Le système permet d\'afficher le catalogue complet, de rechercher des livres par titre, de gérer les membres et leurs emprunts, ainsi que d\'importer de nouveaux ouvrages via une API externe. La base de données stocke les informations sur les livres (titre, auteur, ISBN, catégorie, statut) et les membres (nom, email, téléphone, emprunts en cours). L\'application respecte les principes de la programmation orientée objet.',
     apprentissage: 'Ce projet m\'a permis de consolider mes compétences en C# et d\'approfondir ma compréhension du développement d\'applications console. J\'ai particulièrement appris à concevoir une architecture logicielle robuste. La partie intégration avec une API externe m\'a également initié aux appels réseau et à la désérialisation de données JSON, compétences essentielles pour le développement d\'applications.',
