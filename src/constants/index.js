@@ -252,31 +252,17 @@ export const myProjects = [
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo-biblio.png',
     logoStyle: {
-        backgroundColor: '#1E3A8A',
-        border: '0.2px solid #2563EB',
-        boxShadow: '0px 0px 60px 0px rgba(37, 99, 235, 0.3)',
+        backgroundColor: '#60f5a1',
+        background: 'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+        border: '0.2px solid rgba(208, 213, 221, 1)',
+        boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
     },
-    spotlight: '/assets/spotlight-biblio.png',
+    spotlight: '/assets/spotlight5.png',
     tags: [
         {
             id: 1,
             name: 'C#',
             path: '/assets/icons8-c-sharp-logo-96.png',
-        },
-        {
-            id: 2,
-            name: '.NET',
-            path: '/assets/icons8-dotnet-48.png',
-        },
-        {
-            id: 3,
-            name: 'Console App',
-            path: '/assets/icons8-console-48.png',
-        },
-        {
-            id: 4,
-            name: 'API Integration',
-            path: '/assets/icons8-api-48.png',
         },
     ],
 },
