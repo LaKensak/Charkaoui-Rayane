@@ -94,7 +94,7 @@ const About = () => {
 
                         </div>
                         <div onClick={ouvrirTableau}>
-                            <Button name="Grilles de compétences E4" isBeam containerClass="w-full"/>
+                            <Button name="Tableau de synthèse" isBeam containerClass="w-full"/>
                         </div>
                     </div>
                 </div>
