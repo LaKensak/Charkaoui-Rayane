@@ -209,7 +209,7 @@ export const myProjects = [
     {
         title: 'France Mobilier - Application Web PHP (MVC)',
         desc: 'Une application web e-commerce permettant aux clients de consulter et filtrer un catalogue complet de meubles et accessoires de décoration par catégories.',
-        subdesc: 'Réalisé dans le cadre de mes études, ce projet pédagogique m\'a permis d\'appliquer le pattern MVC (Modèle-Vue-Contrôleur) en PHP natif. L\'application web e-commerce comprend un frontend en HTML5/CSS3/JavaScript offrant une interface conviviale pour parcourir et filtrer le catalogue de mobilier. La base de données MySQL gère les produits, catégories et utilisateurs avec des relations optimisées. Le système inclut des fonctionnalités comme la recherche par filtres, un panier d\'achat utilisant les sessions PHP, et un panneau d\'administration pour la gestion du catalogue. Ce projet m\'a permis de mettre en pratique les concepts de développement web appris en cours tout en travaillant sur un cas concret d\'application e-commerce.',
+        subdesc: 'Réalisé dans le cadre de mes études, ce projet pédagogique m\'a permis d\'appliquer le pattern MVC (Modèle-Vue-Contrôleur) en PHP natif. L\'application web e-commerce comprend un frontend en HTML5/CSS3/JavaScript offrant une interface conviviale pour parcourir et filtrer le catalogue de mobilier. La base de données MySQL gère les produits. Ce projet m\'a permis de mettre en pratique les concepts de développement web appris en cours tout en travaillant sur un cas concret d\'application e-commerce.',
         href: 'https://github.com/LaKensak/MVC_FranceMobilier',
         texture: '/textures/project/project4.mp4',
         logo: '/assets/project-logo3.png',
