@@ -276,10 +276,10 @@ export const workExperiences = [
     name: 'SCongual',
     pos: 'Stage',
     duration: '13/11/2024 - 22/12/2024',
-    title: "En tant que stagiaire, j'ai développé une plateforme de conseil conjugal 'Coach Relation' utilisant React.js/TypeScript pour le frontend et Django pour le backend. J'ai implémenté un système d'exercices interactifs pour couples, un dashboard personnalisé, et des algorithmes de recommandation de contenu. L'application offre aux utilisateurs des outils pratiques pour améliorer leur communication et renforcer leur relation. J'ai également assuré le déploiement sur Render et participé aux phases de test avec les utilisateurs.",
+    title: "En tant que stagiaire, j'ai développé une plateforme de conseil conjugal 'Coach Relation' où les utilisateurs peuvent prendre des rendez-vous avec des tarifs personnalisés, intégrant le système de paiement Stripe. Réalisée avec React.js/TypeScript pour le frontend et Django pour le backend, l'application offre aux couples des outils pratiques pour améliorer leur communication et leur relation.",
     icon: 'https://www.lv-informatique.com/media/1126/logo-lvi-rs-png.png?width=100&height=100',
     animation: 'salute',
-    },
+},
     {
         id: 4,
         name: 'Modern Solidarity',
