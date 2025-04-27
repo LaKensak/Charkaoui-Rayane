@@ -50,6 +50,7 @@ const Projects = () => {
 
                         <p className="animatedText">{currentProject.desc}</p>
                         <p className="animatedText">{currentProject.subdesc}</p>
+                        <p className="animatedText">{currentProject.apprentissage}</p>
                     </div>
 
                     <div className="flex items-center justify-between flex-wrap gap-5">
