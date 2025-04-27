@@ -210,39 +210,39 @@ export const myProjects = [
         ],
     },
     {
-        title: 'France Mobilier - Application Web PHP (MVC)',
-        desc: 'Une application web e-commerce permettant aux clients de consulter et filtrer un catalogue complet de meubles et accessoires de décoration par catégories.',
-        subdesc: 'Réalisé dans le cadre de mes études, ce projet pédagogique m\'a permis d\'appliquer le pattern MVC (Modèle-Vue-Contrôleur) en PHP natif. L\'application web e-commerce comprend un frontend en HTML5/CSS3/JavaScript offrant une interface conviviale pour parcourir et filtrer le catalogue de mobilier. La base de données MySQL gère les produits. Ce projet m\'a permis de mettre en pratique les concepts de développement web appris en cours tout en travaillant sur un cas concret d\'application e-commerce.',
-        apprentissage: 'En réalisant ce projet, j\'ai compris l\'importance des design patterns comme le MVC dans la structuration d\'applications web complexes. Cette expérience m\'a permis de passer de la théorie à la pratique en concevant une architecture maintenable et évolutive, compétence fondamentale pour tout développeur. J\'ai également découvert comment organiser efficacement mon code pour faciliter les futures modifications.',
-        href: 'https://github.com/LaKensak/MVC_FranceMobilier',
-        texture: '/textures/project/project4.mp4',
-        logo: '/assets/project-logo3.png',
-        logoStyle: {
-            backgroundColor: '#60f5a1',
-            background:
-                'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-            border: '0.2px solid rgba(208, 213, 221, 1)',
-            boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+    title: 'France Mobilier - Application Web PHP (MVC)',
+    desc: 'Une application web e-commerce permettant aux clients de consulter et filtrer un catalogue complet de meubles et accessoires de décoration par catégories.',
+    subdesc: 'Réalisé dans le cadre de mes études, ce projet pédagogique m\'a permis d\'appliquer le pattern MVC (Modèle-Vue-Contrôleur) en PHP natif. L\'application web e-commerce comprend un frontend en HTML5/CSS3/JavaScript offrant une interface conviviale pour parcourir et filtrer le catalogue de mobilier. La base de données MySQL gère les produits. Ce projet m\'a permis de mettre en pratique les concepts de développement web appris en cours tout en travaillant sur un cas concret d\'application e-commerce.',
+    apprentissage: 'En réalisant ce projet, j\'ai compris l\'importance des design patterns comme le MVC dans la structuration d\'applications web complexes. J\'ai mis en œuvre les principes de la programmation orientée objet en PHP en utilisant des setters et getters pour encapsuler les données. Cette expérience m\'a permis de passer de la théorie à la pratique en concevant une architecture maintenable et évolutive, compétence fondamentale pour tout développeur.',
+    href: 'https://github.com/LaKensak/MVC_FranceMobilier',
+    texture: '/textures/project/project4.mp4',
+    logo: '/assets/project-logo3.png',
+    logoStyle: {
+        backgroundColor: '#60f5a1',
+        background:
+            'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+        border: '0.2px solid rgba(208, 213, 221, 1)',
+        boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+        {
+            id: 1,
+            name: 'PHP',
+            path: '/assets/icons8-php-24.png',
         },
-        spotlight: '/assets/spotlight3.png',
-        tags: [
-            {
-                id: 1,
-                name: 'PHP',
-                path: '/assets/icons8-php-24.png',
-            },
-            {
-                id: 2,
-                name: 'MySQL',
-                path: 'assets/icons8-mysql-logo-48.png',
-            },
-            {
-                id: 3,
-                name: 'MVC',
-                path: '/assets/icons8-structure-96.webp',
-            }
-        ],
-    },     
+        {
+            id: 2,
+            name: 'MySQL',
+            path: 'assets/icons8-mysql-logo-48.png',
+        },
+        {
+            id: 3,
+            name: 'MVC',
+            path: '/assets/icons8-structure-96.webp',
+        }
+    ],
+},
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
