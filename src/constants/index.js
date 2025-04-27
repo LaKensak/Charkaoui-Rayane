@@ -178,10 +178,10 @@ export const myProjects = [
             },
         ],
     },
-    {
+   {
         title: 'SIO Shop - Gestion automobile',
         desc: 'Un logiciel de gestion interne conçu pour les concessions automobiles, permettant de centraliser le suivi des clients, la gestion des ventes de véhicules et l\'inventaire des produits.',
-        subdesc: 'Ce projet académique a été développé en C# dans le cadre de ma formation, utilisant le framework .NET avec Windows Forms pour l\'interface utilisateur. La base de données MySQL stocke l\'ensemble des informations clients, véhicules et transactions. Le logiciel permet la gestion complète du cycle commercial automobile : création de fiches clients, enregistrement des véhicules avec leurs caractéristiques techniques, suivi des ventes. L\'application suit une architecture en couches pour séparer la logique métier, la présentation et l\'accès aux données, mettant en pratique les concepts de programmation orientée objet enseignés en cours.',
+        subdesc: 'Ce projet académique a été développé en C# dans le cadre de ma formation, utilisant le framework .NET avec Windows Forms pour l\'interface utilisateur. La base de données MySQL stocke l\'ensemble des informations clients, véhicules et transactions. Le système comprend également une application console tierce innovante qui permet de convertir du texte brut en requêtes SQL, simplifiant considérablement le travail des employés peu familiers avec le langage SQL. Cette fonctionnalité permet aux employé(e)s d\'entrer des descriptions en langage naturel qui sont automatiquement transformées en requêtes exploitables par le système. L\'application principale gère le cycle commercial complet : création de fiches clients, enregistrement des véhicules, suivi des ventes, le tout suivant une architecture en couches qui respecte les principes de la programmation orientée objet.',
         href: 'https://github.com/LaKensak/SIO-SHOP',
         texture: '/textures/project/project3.mp4',
         logo: '/assets/project-logo3.png',
