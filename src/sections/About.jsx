@@ -86,8 +86,8 @@ const About = () => {
                                 Pourquoi j'aime coder ?
                             </p>
                             <p className="grid-subtext">
-                                J'aime résoudre des problèmes complexes et créer des solutions innovantes. Le
-                                développement logiciel me permet d'exprimer ma créativité tout en construisant des
+                                J'aime résoudre des problèmes complexes et créer des solutions innovantes. La
+                                programmation me permet d'exprimer ma créativité tout en construisant des
                                 applications utiles. Chaque projet est un nouveau défi qui me pousse à apprendre et à
                                 m'améliorer constamment.
                             </p>
