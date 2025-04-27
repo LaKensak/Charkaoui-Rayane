@@ -555,9 +555,9 @@ const Veille = () => {
                             <div>
                                 <p className="grid-headtext">Méthodologie</p>
                                 <p className="grid-subtext mb-4">
-                                    Cette veille technologique est réalisée à travers le suivi de
-                                    publications scientifiques, conférences spécialisées, brevets déposés et communiqués
-                                    officiels des acteurs majeurs du secteur.Nous appliquons une approche structurée en 4 étapes :
+                                    Je reste constamment à jour sur les nouvelles technologies en suivant des blogs tech, 
+                des chaînes YouTube spécialisées, des forums de développeurs et les réseaux sociaux des 
+                leaders technologiques. Pour organiser ma veille, j'utilise une méthode en 4 étapes :
                                 </p>
 
                                 <div className="mt-4 space-y-3">
